@@ -1,8 +1,8 @@
 // =============================================================================================
 //
 // Synpoo's ultra strict PD2 filter
-// v0.1.0
-// Last updated: April 5 2021
+// v0.1.0b
+// Last updated: April 6 2021
 // Reach me at discord: synpoo#7377
 //
 // This filter was built for the endgame ONLY and WILL hide majority of items
@@ -201,7 +201,7 @@ ItemDisplay[UNI (6ws OR 6cs OR 7cr) !ID]: %GREEN%*%RED%+%PURPLE%O             %G
 
 // SET
 // nats wep
-ItemDisplay[SET 7qr !ETH !ID]:  + %NAME% + %MAP%
+ItemDisplay[SET 7qr !ETH !ID]: %GREEN%*%RED%+%PURPLE%O             %GREEN%%NAME%            %PURPLE%O%RED%+%GREEN%*%MAP-84%
 
 // RUNEWORD BASES
 // 4os GMB+3 skill
@@ -224,7 +224,7 @@ ItemDisplay[(7wa OR 7gd OR 7fb) SUP SOCK>4 ETH !RW]: %DARK_GREEN%*    Eth %NAME%
 // 0 or 3os elite sin claw +3 light sentry
 ItemDisplay[!NORM CL5 NMAG (SOCK=0 OR SOCK=3) SK366=3 !RW]: %DARK_GREEN%*    %NAME% %RED%+3 Sentry %SOCKETS%os    %DARK_GREEN%*%MAP-76%
 // 0 or 3os elite sin claw +3 wake
-ItemDisplay[!NORM CL5 NMAG (SOCK=0 OR SOCK=3) SK272=3 !RW]: %DARK_GREEN%*    %NAME% %RED%+3 Wake %SOCKETS%os    %DARK_GREEN%*%MAP-76%
+ItemDisplay[!NORM CL5 NMAG (SOCK=0 OR SOCK=3) SK262=3 !RW]: %DARK_GREEN%*    %NAME% %RED%+3 Wake %SOCKETS%os    %DARK_GREEN%*%MAP-76%
 
 // hide all else
 ItemDisplay[WEAPON (MAG OR RARE OR UNI OR SET) !ID]:
@@ -261,9 +261,9 @@ ItemDisplay[UNI (uhl OR utb OR uvb OR uhg) !ID]: %GREEN%*%RED%+%PURPLE%O        
 
 // SET
 // aldurs boots, trang helm, trang shield, trang chest
-ItemDisplay[SET (xtb OR uh9 OR ne9 OR xul) !ETH !ID]:  + %NAME% + %MAP%
+ItemDisplay[SET (xtb OR uh9 OR ne9 OR xul) !ETH !ID]: %GREEN%*%RED%+%PURPLE%O             %GREEN%%NAME%            %PURPLE%O%RED%+%GREEN%*%MAP-84%
 // tals chest, tals helm
-ItemDisplay[SET (uth OR xsk) !ETH !ID]:  + %NAME% + %MAP%
+ItemDisplay[SET (uth OR xsk) !ETH !ID]: %GREEN%*%RED%+%PURPLE%O             %GREEN%%NAME%            %PURPLE%O%RED%+%GREEN%*%MAP-84%
 
 // RUNEWORD BASES
 // 0 or 3os+ superior ed mage, dusk, archon
