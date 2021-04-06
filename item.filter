@@ -1,0 +1,287 @@
+// =============================================================================================
+//
+// Synpoo's ultra strict PD2 filter
+// v0.1.0
+// Last updated: April 5 2021
+// Reach me at discord: synpoo#7377
+//
+// This filter was built for the endgame ONLY and WILL hide majority of items
+// Do not use if you are a new player
+//
+// Credits to:
+// - Kryszard for a lot of note rules
+//
+// =============================================================================================
+
+
+// MINIMAP ICON COLOR REFERENCES
+//
+// Runeword Bases / DARK_GREEN = 76
+// Magic = 91
+// Rare = 6C
+// Set = 84
+
+
+// =============================================================
+// BASIC ITEMS
+//
+// Hidden: All potions except supers and full rejuv, keys, scrolls
+// =============================================================
+ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk) QTY>0]: %NAME% %TAN%x %WHITE%%QTY%%CONTINUE%
+ItemDisplay[GOLD<6000]:
+ItemDisplay[leg]: %NAME%
+ItemDisplay[(hp1 OR hp2 OR hp3 OR hp4 OR mp1 OR mp2 OR mp3 OR mp4)]:
+ItemDisplay[(gps OR ops OR gpm OR opm OR gpl OR opl)]:
+ItemDisplay[(key OR vps OR yps OR wms OR tsc OR isc)]:
+ItemDisplay[hp5]: %RED%*%WHITE%Hp
+ItemDisplay[mp5]:	%BLUE%*%WHITE%Mp
+ItemDisplay[rvl]: %PURPLE%Full
+ItemDisplay[rvs]: %PURPLE%*%WHITE%35%
+
+// =============================================================
+// GEMS
+//
+// Hidden: All except flawless skull/ruby/amethyst/sapphire and all Perfects
+// =============================================================
+ItemDisplay[(skl OR skls)]: %TAN%* %WHITE%%NAME% %TAN%*
+ItemDisplay[(gzv OR gzvs)]: %PURPLE%* %WHITE%%NAME% %PURPLE%*
+ItemDisplay[(glr OR glrs)]: %RED%* %WHITE%%NAME% %RED%*
+ItemDisplay[(glb OR glbs)]: %BLUE%* %WHITE%%NAME% %BLUE%*
+ItemDisplay[(GEMLEVEL=1 OR GEMLEVEL=2 OR GEMLEVEL=3 OR GEMLEVEL=4)]:
+ItemDisplay[(gpb OR gpbs)]: %BLUE%* %WHITE%%NAME% %BLUE%*%DOT-20%
+ItemDisplay[(gpg OR gpgs)]: %GREEN%* %WHITE%%NAME% %GREEN%*%DOT-20%
+ItemDisplay[(gpr OR gprs)]: %RED%* %WHITE%%NAME% %RED%*%DOT-20%
+ItemDisplay[(gpv OR gpvs)]: %PURPLE%* %WHITE%%NAME% %PURPLE%*%DOT-20%
+ItemDisplay[(gpw OR gpws)]: %WHITE%* %NAME% *%DOT-20%
+ItemDisplay[(gpy OR gpys)]: %YELLOW%* %WHITE%%NAME% %YELLOW%*%DOT-20%
+ItemDisplay[(skz OR skzs)]: %TAN%* %WHITE%%NAME% %TAN%*%DOT-20%
+
+// =============================================================
+// ENDGAME QUEST ITEMS AND POD ITEMS
+//
+// =============================================================
+// Essences
+ItemDisplay[tes]: %GRAY%  Essence%ORANGE% (Andariel and Duriel)  %MAP%
+ItemDisplay[ceh]: %GRAY%  Essence%ORANGE% (Mephisto)  %MAP%
+ItemDisplay[bet]: %GRAY%  Essence%ORANGE% (Diablo)  %MAP%
+ItemDisplay[fed]: %GRAY%  Essence%ORANGE% (Baal)  %MAP%
+
+// Keys and Organs
+ItemDisplay[pk1]: %PURPLE%O  %GRAY%Key%ORANGE% (Countess)  %PURPLE%O %MAP%
+ItemDisplay[pk2]: %PURPLE%O  %GRAY%Key%ORANGE% (Summoner)  %PURPLE%O %MAP%
+ItemDisplay[pk3]: %PURPLE%O  %GRAY%Key%ORANGE% (Nihlathak)  %PURPLE%O %MAP%
+ItemDisplay[dhn OR bey OR mbr]:  %PURPLE%**  %ORANGE%%NAME%  %PURPLE%** %MAP%
+
+// PD2 Items
+ItemDisplay[wss]: %RED%*      %PURPLE%%NAME%      %RED%*%MAP%
+ItemDisplay[(dcho OR dcso OR dcbl)]: %GREEN%*%RED%*%PURPLE%*      %NAME%      %PURPLE%*%RED%*%GREEN%*%MAP%
+// Taken from Kryszard's filter
+ItemDisplay[scrb]: %BORDER-A9%%NAME% %ORANGE%*{%RED%Group Dungeon%NL%%TAN%Note%WHITE%: Cube it with %GRAY%[%ORANGE%T3%GRAY%] %WHITE%Map to Make:}
+ItemDisplay[imra]: %NAME% %ORANGE%*{%WHITE%Map + %GOLD%Orb %WHITE%+ %BLUE%Jewel %WHITE%+ %ORANGE%Rune>9%NL%%TAN%Note%WHITE%: Imbue White Map to %YELLOW%Rare%WHITE%:}
+ItemDisplay[rera]: %NAME% %ORANGE%*{%YELLOW%Map %WHITE%+ %GOLD%Orb %WHITE%+ Perf Gem + %ORANGE%Rune>9%NL%%TAN%Note%WHITE%: Reroll %YELLOW%Rare %WHITE%Map:}
+ItemDisplay[upma]: %NAME% %ORANGE%*{%BLUE%Map %WHITE%+ %GOLD%Orb %WHITE%+ PSkull %WHITE%+ %ORANGE%Rune>9%NL%%TAN%Note%WHITE%: Imbue %BLUE%Magic %WHITE%Map to %YELLOW%Rare%WHITE%:}
+ItemDisplay[imma]: %NAME% %ORANGE%*{%WHITE%Map + %GOLD%Orb %WHITE%+ %BLUE%Jewel %NL%%TAN%Note%WHITE%: Imbue White Map to %BLUE%Magic%WHITE%:}
+ItemDisplay[scou]: %NAME% %ORANGE%*{%BLUE%M%WHITE%a%YELLOW%p %WHITE%+ %GOLD%Orb %WHITE%+ %ORANGE%Hel Rune%NL%%TAN%Note%WHITE%: Imbue %BLUE%Magic%WHITE%/%YELLOW%Rare %WHITE%Map to White:}
+ItemDisplay[upmp]: %NAME% %ORANGE%*{%WHITE%3x%BLUE%M%WHITE%a%YELLOW%p %TAN%(%WHITE%Tier:%ORANGE%x%TAN%) %WHITE%+ %GOLD%Orb %WHITE%= Map %TAN%(%WHITE%Tier:%ORANGE%x%WHITE%+1%TAN%)%NL%Note%WHITE%: Upgrade Maps for higher Tier:}
+ItemDisplay[lbox]: %BORDER-0A%%PURPLE%O%RED%O%ORANGE%O%YELLOW%O     %NAME%     %YELLOW%O%ORANGE%O%RED%O%PURPLE%O{%WHITE%Two-Handed Weapon = 4 max%NL%One-Handed Weapon = 2 max%NL%Helmet, Chest, Shield = 2 max%NL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
+
+// PD2 Maps
+ItemDisplay[(t11 OR t12 OR t13 OR t14 OR t15)]: * [T1] %NAME% *%CONTINUE%%MAP%
+ItemDisplay[(t21 OR t22 OR t23 OR t24 OR t25)]: * [T2] %NAME% *%CONTINUE%%MAP%
+ItemDisplay[(t31 OR t32 OR t33 OR t34 OR t35)]: * [T3] %NAME% *%CONTINUE%%MAP%
+ItemDisplay[(t41)]: * [T4 Dungeon] %NAME% *%CONTINUE%%MAP%
+ItemDisplay[(t11 OR t12 OR t13 OR t14 OR t15 OR t21 OR t22 OR t23 OR t24 OR t25 OR t31 OR t32 OR t33 OR t34 OR t35 OR t41) !ID]: %NAME%%MAP%
+ItemDisplay[dcma]: %PURPLE%***   %RED%%NAME%   %PURPLE%***%MAP%
+
+// =============================================================
+// RUNES, JEWELS, CHARMS
+//
+// Hidden: Runes below Lem (Ko shows for unique armor upgrade recipe)
+// =============================================================
+ItemDisplay[RUNE>25]: %GREEN%*%RED%o%PURPLE%O              %ORANGE%%NAME%             %PURPLE%O%RED%o%GREEN%*%MAP%%CONTINUE%
+ItemDisplay[RUNE>19 AND RUNE<26]: %GREEN%*%PURPLE%O       %ORANGE%%NAME%       %PURPLE%O%GREEN%*%MAP%%CONTINUE%
+ItemDisplay[RUNE>10 AND RUNE<20]: %NAME%%CONTINUE%
+ItemDisplay[RUNE=8]: %PURPLE%* %NAME% %PURPLE%*%CONTINUE%
+ItemDisplay[((RUNE>0 AND RUNE<8) OR RUNE=9)]:
+// Runes Notes
+// Taken from Kryszard's filter
+ItemDisplay[r01s]: %NAME%{%TAN%Note%WHITE%: 3xEl + %GRAY%key %WHITE%= Eld%NL%%NL%Shield: +15 Defense%NL%Armor/Helm: +15 Defense%NL%Weapon: +50 Attack Rating%NL%}
+ItemDisplay[r02s]: %NAME%{%TAN%Note%WHITE%: 3xEld + %GRAY%key %WHITE%= Tir%NL%%NL%Shield: 7% Block Chance%NL%Armor/Helm: -15% Stamina Drain%NL%Weapon: +75% Dmg, +50 AR vs Undead%NL%}
+ItemDisplay[r03s]: %NAME%{%TAN%Note%WHITE%: 3xTir + %GRAY%key %WHITE%= Nef%NL%%NL%Shield: +2 to Mana per Kill%NL%Armor/Helm: +2 to Mana per Kill%NL%Weapon: +2 to Mana per Kill%NL%}
+ItemDisplay[r04s]: %NAME%{%TAN%Note%WHITE%: 3xNef + %GRAY%key %WHITE%= Eth%NL%%NL%Shield: +30 Defense Vs. Missile%NL%Armor/Helm: +30 Defense Vs. Missile%NL%Weapon: Knockback%NL%}
+ItemDisplay[r05s]: %NAME%{%TAN%Note%WHITE%: 3xEth + %GRAY%key %WHITE%= Ith%NL%%NL%Shield: Regenerate Mana 15%%NL%Armor/Helm: Regenerate Mana 15%%NL%Weapon: -25% Target Defense%NL%}
+ItemDisplay[r06s]: %NAME%{%TAN%Note%WHITE%: 3xIth + %GRAY%key %WHITE%= Tal%NL%%NL%Shield: 15% Damage to Mana%NL%Armor/Helm: 15% Damage to Mana%NL%Weapon: +9 to Max Damage%NL%}
+ItemDisplay[r07s]: %NAME%{%TAN%Note%WHITE%: 3xTal + %GRAY%key %WHITE%= Ral%NL%%NL%Shield: Psn Res +35%%NL%Armor/Helm: Psn Res +30%%NL%Weapon: +75 Psn Dmg Over 5 Sec%NL%}
+ItemDisplay[r08s]: %NAME%{%TAN%Note%WHITE%: 3xRal + %GRAY%key %WHITE%= Ort%NL%%NL%Shield: Fire Resist +35%%NL%Armor/Helm: Fire Resist +30%%NL%Weapon: +5-30 Fire Dmg%NL%}
+ItemDisplay[r09s]: %NAME%{%TAN%Note%WHITE%: 3xOrt + %GRAY%key %WHITE%= Thul%NL%%NL%Shield: Light Resist +35%%NL%Armor/Helm: Light Resist +30%%NL%Weapon: +1-50 Light Dmg%NL%}
+ItemDisplay[r10s]: %NAME%{%TAN%Note%WHITE%: 3xThul + %GRAY%key %WHITE%= Amn%NL%%NL%Shield: Cold Resist +35%%NL%Armor/Helm: Cold Resist +30%%NL%Weapon: +3-14 Cold Dmg%NL%}
+ItemDisplay[r11s]: %NAME%{%TAN%Note%WHITE%: 3xAmn + %GRAY%key %WHITE%= Sol%NL%%NL%Shield: Attacker Takes Dmg 14%NL%Armor/Helm: Attacker Takes Dmg 14%NL%Weapon: 7% Life Leech%NL%}
+ItemDisplay[r12s]: %NAME%{%TAN%Note%WHITE%: 3xSol + %GRAY%key %WHITE%= Shael%NL%%NL%Shield: Damage Reduced by 7%NL%Armor/Helm: Damage Reduced by 7%NL%Weapon: +9 to Min Damage%NL%}
+ItemDisplay[r13s]: %NAME%{%TAN%Note%WHITE%: 3xShael + %GRAY%key %WHITE%= Dol%NL%%NL%Shield: 20% Fast Block%NL%Armor/Helm: 20% Fast Hit Recovery%NL%Weapon: 20% Inc Attack Speed%NL%}
+ItemDisplay[r14s]: %NAME%{%TAN%Note%WHITE%: 3xDol + %GRAY%key %WHITE%= Hel%NL%%NL%Shield: Replenish Life +10%NL%Armor/Helm: Replenish Life +10%NL%Weapon: 25% Enhanced Damage%NL%}
+ItemDisplay[r15s]: %NAME%{%TAN%Note%WHITE%: 3xHel + %GRAY%key %WHITE%= Io%NL%%NL%Shield: Requirements -15%%NL%Armor/Helm: Requirements -15%%NL%Weapon: Requirements -20%%NL%}
+ItemDisplay[r16s]: %NAME%{%TAN%Note%WHITE%: 3xIo + %GRAY%key %WHITE%= Lum%NL%%NL%Shield: +10 to Vitality%NL%Armor/Helm: +10 to Vitality%NL%Weapon: +10 to Vitality%NL%}
+ItemDisplay[r17s]: %NAME%{%TAN%Note%WHITE%: 3xLum + %GRAY%key %WHITE%= Ko%NL%%NL%Shield: +10 to Energy%NL%Armor/Helm: +10 to Energy%NL%Weapon: +10 to Energy%NL%}
+ItemDisplay[r18s]: %NAME%{%TAN%Note%WHITE%: 3xKo + %GRAY%key %WHITE%= Fal%NL%%NL%Shield: +10 to Dexterity%NL%Armor/Helm: +10 to Dexterity%NL%Weapon: +10 to Dexterity%NL%}
+ItemDisplay[r19s]: %NAME%{%TAN%Note%WHITE%: 3xFal + %GRAY%key %WHITE%= Lem%NL%%NL%Shield: +10 to Strength%NL%Armor/Helm: +10 to Strength%NL%Weapon: +10 to Strength%NL%}
+ItemDisplay[r20s]: %NAME%{%TAN%Note%WHITE%: 3xLem + %GRAY%key %WHITE%= Pul%NL%%NL%Shield: 50% Extra Gold%NL%Armor/Helm: 50% Extra Gold%NL%Weapon: 75% Extra Gold%NL%}
+ItemDisplay[r21s]: %NAME%{%TAN%Note%WHITE%: 2xPul + %GRAY%key %WHITE%= Um%NL%%NL%Shield: 30% Enhanced Def%NL%Armor/Helm: 30% Enhanced Def%NL%Weapon: +75% Dmg, +100 AR vs Demon%NL%}
+ItemDisplay[r22s]: %NAME%{%TAN%Note%WHITE%: 2xUm + %GRAY%key %WHITE%= Mal%NL%%NL%Shield: All Res +22%NL%Armor/Helm: All Res +15%NL%Weapon: 25% Chance of Open Wounds%NL%}
+ItemDisplay[r23s]: %NAME%{%TAN%Note%WHITE%: 2xMal + %GRAY%key %WHITE%= Ist%NL%%NL%Shield: Magic Dmg Red by 7%NL%Armor/Helm: Magic Dmg Red by 7%NL%Weapon: Prevent Monster Heal%NL%}
+ItemDisplay[r24s]: %NAME%{%TAN%Note%WHITE%: 2xIst + %GRAY%key %WHITE%= Gul%NL%%NL%Shield: 25% Magic Find%NL%Armor/Helm: 25% Magic Find%NL%Weapon: 30% Magic Find%NL%}
+ItemDisplay[r25s]: %NAME%{%TAN%Note%WHITE%: 2xGul + %GRAY%key %WHITE%= Vex%NL%%NL%Shield: +4% to Max Psn Res%NL%Armor/Helm: +4% to Max Psn Res%NL%Weapon: +20% to Attack Rating%NL%}
+ItemDisplay[r26s]: %NAME%{%TAN%Note%WHITE%: 2xVex + %GRAY%key %WHITE%= Ohm%NL%%NL%Shield: +4% to Max Fire Res%NL%Armor/Helm: +4% to Max Fire Res%NL%Weapon: 7% Mana Leech%NL%}
+ItemDisplay[r27s]: %NAME%{%TAN%Note%WHITE%: 2xOhm + %GRAY%key %WHITE%= Lo%NL%%NL%Shield: +4% to Max Cold Res%NL%Armor/Helm: +4% to Max Cold Res%NL%Weapon: 50% Enhanced Damage%NL%}
+ItemDisplay[r28s]: %NAME%{%TAN%Note%WHITE%: 2xLo + %GRAY%key %WHITE%= Sur%NL%%NL%Shield: +4% to Max Light Res%NL%Armor/Helm: +4% to Max Light Res%NL%Weapon: 20% Deadly Strike%NL%}
+ItemDisplay[r29s]: %NAME%{%TAN%Note%WHITE%: 2xSur + %GRAY%key %WHITE%= Ber%NL%%NL%Shield: +50 to Mana%NL%Armor/Helm: Inc Max Mana 5%%NL%Weapon: +4 Life After Each Kill%NL%}
+ItemDisplay[r30s]: %NAME%{%TAN%Note%WHITE%: 2xBer + %GRAY%key %WHITE%= Jah%NL%%NL%Shield: Dmg Red by 4%%NL%Armor/Helm: Dmg Red by 4%%NL%Weapon: 20% Chance of Crushing Blow%NL%}
+ItemDisplay[r31s]: %NAME%{%TAN%Note%WHITE%: 2xJah + %GRAY%key %WHITE%= Cham%NL%%NL%Shield: +50 to Life%NL%Armor/Helm: Inc Max Life 5%%NL%Weapon: Ignore Target's Defense%NL%}
+ItemDisplay[r32s]: %NAME%{%TAN%Note%WHITE%: 2xCham + %GRAY%key %WHITE%= Zod%NL%%NL%Shield: Cannot be Frozen%NL%Armor/Helm: Cannot be Frozen%NL%Weapon: Freezes Target +3%NL%}
+ItemDisplay[r33s]: %NAME%{%TAN%Note%WHITE%: Zod + Perf %GRAY%O %WHITE%= Repair any Item%NL%%NL%%WHITE%Shield: Indestructible%NL%Armor/Helm: Indestructible%NL%Weapon: Indestructible%NL%}
+ItemDisplay[RUNE>0]: %NAME%{%TAN%Note%WHITE%: Cube %ORANGE%Runes %WHITE%to %GRAY%(un)%WHITE%stack them%NL%}
+
+// Hidden: Unid Large charms, Grand charms <ilvl50, Small charms <ilvl50
+ItemDisplay[(cm1 OR cm2 OR cm3) UNI !ID]: %GREEN%*%RED%o%PURPLE%O              %GOLD%%NAME%             %PURPLE%O%RED%o%GREEN%*%MAP%
+ItemDisplay[(cm1 OR cm3) ILVL>50 !ID]: *  %NAME% [i%ILVL%]  *%MAP-91%
+ItemDisplay[(cm1 OR cm2 OR cm3) !ID]:
+
+// Hidden: Unid Jewels <ilvl 45
+ItemDisplay[jew MAG !ID]: %NAME% [i%ILVL%]%MAP-91%
+ItemDisplay[jew RARE !ID]: *  %NAME% [i%ILVL%]  *%MAP-6C%
+ItemDisplay[jew UNI !ID]: %GREEN%*%RED%o%PURPLE%O            %GOLD%%NAME%           %PURPLE%O%RED%o%GREEN%*%MAP%
+ItemDisplay[jew (MAG OR RARE) ILVL<45 !ID]:
+
+// =============================================================
+// AMULETS, RINGS, BOLTS, ARROWS
+//
+// Hidden: (UNID) Magic amulets amulets/rings/quivers/arrows
+// - Unid Set rings
+// - Unid rare amulets/rings/arrows <ilvl74
+// =============================================================
+ItemDisplay[amu SET !ID]: %GREEN%*%RED%+%PURPLE%O             %GREEN%%NAME%            %PURPLE%O%RED%+%GREEN%*%MAP-84%
+ItemDisplay[(amu OR rin) UNI !ID]: %GREEN%*%RED%+%PURPLE%O             %GOLD%%NAME%            %PURPLE%O%RED%+%GREEN%*%MAP%
+ItemDisplay[(amu OR rin) RARE ILVL>74 !ID]: + %NAME% [i%ILVL%] +%MAP-6C%
+ItemDisplay[amu MAG ILVL>87]: %NAME% [i%ILVL%]
+ItemDisplay[aqv RARE ILVL>74 !ID]: %NAME% [i%ILVL%]
+ItemDisplay[(amu OR rin) (NMAG OR MAG OR RARE) !ID]:
+ItemDisplay[(aqv OR cqv) MAG !ID]:
+ItemDisplay[(aqv OR cqv) NMAG]:
+ItemDisplay[rin SET !ID]:
+
+// =============================================================
+// WEAPONS
+//
+// =============================================================
+
+//Vendor items
+//SK88=1 =32453 Gold. SK73=1 =32453 Gold.
+ItemDisplay[WP12 NMAG !ETH (wnd OR ywn OR 9wn) ILVL>49 (SK73>0 OR SK79=3 OR SK82=3 OR SK83>1 OR SK85=3 OR SK86>1 OR SK87>0 OR SK88>0 OR SK89>0 OR SK90>1 OR SK91>1 OR SK92>0 OR SK93>0 OR SK94>0 OR SK95>0)]: %ORANGE%$%PRICE%
+ItemDisplay[WP12 NMAG !ETH SOCK=1 (SK73>0 OR SK79=3 OR SK82=3 OR SK83>1 OR SK85=3 OR SK86>1 OR SK87>0 OR SK88>0 OR SK89>0 OR SK90>1 OR SK91>1 OR SK92>0 OR SK93>0 OR SK94>0 OR SK95>0)]: %ORANGE%$%PRICE%
+ItemDisplay[NMAG !ETH !ED=15 (7tk OR 7ta OR 7bk)]: %ORANGE%$%PRICE%
+
+// UNIQUE
+// eth lacerator, eth warshrike, eth windhammer, eth arioc
+ItemDisplay[UNI (7b8 OR 7bk OR 7m7 OR 7sr) ETH !ID]: %GREEN%*%RED%+%PURPLE%O             %GOLD%%NAME%            %PURPLE%O%RED%+%GREEN%*%MAP%
+// titans, tstroke, windforce, wraith flight
+ItemDisplay[UNI (ama OR amf OR 6lw OR 7gl) !ID]: %GREEN%*%RED%+%PURPLE%O             %GOLD%%NAME%            %PURPLE%O%RED%+%GREEN%*%MAP%
+// bartuc, firelizard, shadow killer. jade talon, aidan
+ItemDisplay[UNI (9tw OR 7lw OR 7cs OR 7wb OR 7qr) !ID]: %GREEN%*%RED%+%PURPLE%O             %GOLD%%NAME%            %PURPLE%O%RED%+%GREEN%*%MAP%
+// death cleaver, executioners justice, astreon, steel pillar
+ItemDisplay[UNI (7wa OR 7gi OR 7ws OR 7p7) !ID]: %GREEN%*%RED%+%PURPLE%O             %GOLD%%NAME%            %PURPLE%O%RED%+%GREEN%*%MAP%
+// fleshripper, death's web
+ItemDisplay[UNI (7kr OR 7gw) !ID]: %GREEN%*%RED%+%PURPLE%O             %GOLD%%NAME%            %PURPLE%O%RED%+%GREEN%*%MAP%
+// occy, eschutas, fathom
+ItemDisplay[UNI (oba OR obc OR obf) !ID]: %GREEN%*%RED%+%PURPLE%O             %GOLD%%NAME%            %PURPLE%O%RED%+%GREEN%*%MAP%
+// grandfather, cranium, earth shifter
+ItemDisplay[UNI (7gd OR 7gm) !ID]: %GREEN%*%RED%+%PURPLE%O             %GOLD%%NAME%            %PURPLE%O%RED%+%GREEN%*%MAP%
+// eth reaper's toll
+ItemDisplay[UNI 7s8 ETH !ID]: %GREEN%*%RED%+%PURPLE%O             %GOLD%%NAME%            %PURPLE%O%RED%+%GREEN%*%MAP%
+// mang song, ondals, azurewrath/lightsabre
+ItemDisplay[UNI (6ws OR 6cs OR 7cr) !ID]: %GREEN%*%RED%+%PURPLE%O             %GOLD%%NAME%            %PURPLE%O%RED%+%GREEN%*%MAP%
+
+// SET
+// nats wep
+ItemDisplay[SET 7qr !ETH !ID]:  + %NAME% + %MAP%
+
+// RUNEWORD BASES
+// 4os GMB+3 skill
+ItemDisplay[amc NMAG SOCK=4 TABSK0=3 !ETH !RW]: %DARK_GREEN%*    %NAME% %RED%+3bow %SOCKETS%os    %DARK_GREEN%*%MAP-76%
+// 4os eth thresher/giant thresher/mancatcher
+ItemDisplay[(7s8 OR 7wc OR 7br) NMAG SOCK=4 ETH !RW]: %DARK_GREEN%*    Eth %NAME% %RED%%SOCKETS%os    %DARK_GREEN%*%MAP-76%
+// 6os normal eth war pike
+ItemDisplay[7p7 NMAG SOCK=6 ETH !RW]: %DARK_GREEN%*    Eth %NAME% %RED%%SOCKETS%os    %DARK_GREEN%*%MAP-76%
+// 0 or 6os superior eth war pike
+ItemDisplay[7p7 SUP (SOCK=0 OR SOCK=6) ED>0 ETH !RW]: %DARK_GREEN%*    Eth %NAME% %RED%%SOCKETS%os    %DARK_GREEN%*%MAP-76%
+// 
+// TESTLINE
+ItemDisplay[7p7 NMAG (SOCK=0 OR SOCK=6) ETH !RW]: %DARK_GREEN%*    Eth %NAME% %RED%%SOCKETS%os    %DARK_GREEN%*%MAP-76%
+// TESTLINE
+// 
+// 5os+ superior zerker
+ItemDisplay[7wa SUP SOCK>4 !RW]: %DARK_GREEN%*    %NAME% %RED%%SOCKETS%os    %DARK_GREEN%*%MAP-76%
+// 5os+ eth superior zerker, col blade, col sword
+ItemDisplay[(7wa OR 7gd OR 7fb) SUP SOCK>4 ETH !RW]: %DARK_GREEN%*    Eth %NAME% %RED%%SOCKETS%os    %DARK_GREEN%*%MAP-76%
+// 0 or 3os elite sin claw +3 light sentry
+ItemDisplay[!NORM CL5 NMAG (SOCK=0 OR SOCK=3) SK366=3 !RW]: %DARK_GREEN%*    %NAME% %RED%+3 Sentry %SOCKETS%os    %DARK_GREEN%*%MAP-76%
+// 0 or 3os elite sin claw +3 wake
+ItemDisplay[!NORM CL5 NMAG (SOCK=0 OR SOCK=3) SK272=3 !RW]: %DARK_GREEN%*    %NAME% %RED%+3 Wake %SOCKETS%os    %DARK_GREEN%*%MAP-76%
+
+// hide all else
+ItemDisplay[WEAPON (MAG OR RARE OR UNI OR SET) !ID]:
+ItemDisplay[WEAPON NMAG !RW]:
+
+// =============================================================
+// ARMOR
+//
+// =============================================================
+
+// UNIQUE
+// arreats, jalal's, ravenlore, spirit keeper
+ItemDisplay[UNI (baa OR dra OR dre OR drd) !ETH !ID]: %GREEN%*%RED%+%PURPLE%O             %GOLD%%NAME%            %PURPLE%O%RED%+%GREEN%*%MAP%
+// arach, griffs, kira
+ItemDisplay[UNI (ulc OR ci3 OR ci2) !ETH !ID]: %GREEN%*%RED%+%PURPLE%O             %GOLD%%NAME%            %PURPLE%O%RED%+%GREEN%*%MAP%
+// tyrael, gore rider, leviathan, dark abyss
+ItemDisplay[UNI (uar OR xhb OR uld OR uth) !ID]: %GREEN%*%RED%+%PURPLE%O             %GOLD%%NAME%            %PURPLE%O%RED%+%GREEN%*%MAP%
+// vmagi, shaft, skullders, steel carapace
+ItemDisplay[UNI (xea OR xhn OR xpl OR uul) !ID]: %GREEN%*%RED%+%PURPLE%O             %GOLD%%NAME%            %PURPLE%O%RED%+%GREEN%*%MAP%
+// arkaines, gbane, tgods, razortail, verdungo, string, snowclash, nosferatu
+ItemDisplay[UNI (upl OR utu OR zhb OR zvb OR umc OR zlb OR ztb OR uvc) !ID]: %GREEN%*%RED%+%PURPLE%O             %GOLD%%NAME%            %PURPLE%O%RED%+%GREEN%*%MAP%
+// silks, war trav, dracs, soul drainer, magefist
+ItemDisplay[UNI (xmb OR xtb OR uvg OR umg OR tgl) !ID]: %GREEN%*%RED%+%PURPLE%O             %GOLD%%NAME%            %PURPLE%O%RED%+%GREEN%*%MAP%
+// shako, steelshade, nightwings veil/veil of steel, crown of ages (coa), giant skull
+ItemDisplay[UNI (uap OR ulm OR uhm OR urn OR uh9) !ID]: %GREEN%*%RED%+%PURPLE%O             %GOLD%%NAME%            %PURPLE%O%RED%+%GREEN%*%MAP%
+// andys, gaze, atmas wail, waterwalk
+ItemDisplay[UNI (usk OR xh9 OR xth OR xvb) !ID]: %GREEN%*%RED%+%PURPLE%O             %GOLD%%NAME%            %PURPLE%O%RED%+%GREEN%*%MAP%
+// hoz, stormshield, homunc, darkforce, boneflame
+ItemDisplay[UNI (pa9 OR uit OR nea OR nef OR nee) !ETH !ID]: %GREEN%*%RED%+%PURPLE%O             %GOLD%%NAME%            %PURPLE%O%RED%+%GREEN%*%MAP%
+// medusa, lidless, gerke
+ItemDisplay[UNI (uow OR xsh OR xow) !ETH !ID]: %GREEN%*%RED%+%PURPLE%O             %GOLD%%NAME%            %PURPLE%O%RED%+%GREEN%*%MAP%
+// overlords helm, ith path, sandstorm trek, steelrend
+ItemDisplay[UNI (uhl OR utb OR uvb OR uhg) !ID]: %GREEN%*%RED%+%PURPLE%O             %GOLD%%NAME%            %PURPLE%O%RED%+%GREEN%*%MAP%
+
+// SET
+// aldurs boots, trang helm, trang shield, trang chest
+ItemDisplay[SET (xtb OR uh9 OR ne9 OR xul) !ETH !ID]:  + %NAME% + %MAP%
+// tals chest, tals helm
+ItemDisplay[SET (uth OR xsk) !ETH !ID]:  + %NAME% + %MAP%
+
+// RUNEWORD BASES
+// 0 or 3os+ superior ed mage, dusk, archon
+ItemDisplay[SUP (xtp OR uui OR utp) (SOCK=0 OR SOCK>2) ED>0 !ETH !RW]: %DARK_GREEN%*    %NAME% %RED%%SOCKETS%os    %DARK_GREEN%*%MAP-76%
+// superior ed eth elite armors (treachery, stone, duress)
+ItemDisplay[SUP ELT EQ2 ED>0 ETH !RW]: %DARK_GREEN%*   Eth %NAME% %RED%%SOCKETS%os    %DARK_GREEN%*%MAP-76%
+// 0 socket or 4os 29-30res eth sacred targe, vortex shield
+ItemDisplay[NMAG (pab OR paf) (SOCK=0 OR SOCK=4) RES=29 ETH !RW]: %DARK_GREEN%*    %NAME% %YELLOW%29@res %RED%%SOCKETS%os    %DARK_GREEN%*%MAP-76%
+ItemDisplay[NMAG (pab OR paf) (SOCK=0 OR SOCK=4) RES=30 ETH !RW]: %DARK_GREEN%*    %NAME% %YELLOW%30@res %RED%%SOCKETS%os    %DARK_GREEN%*%MAP-76%
+// 0 socket or 4os ed eth sacred targe, vortex shield (exile)
+ItemDisplay[SUP (pab OR paf) (SOCK=0 OR SOCK=4) ED>0 ETH !RW]: %DARK_GREEN%*    Eth %NAME% %RED%%SOCKETS%os    %DARK_GREEN%*%MAP-76%
+// 0 socket or 4os -10req monarch
+ItemDisplay[SUP uit (SOCK=0 OR SOCK=4) STAT91=-10 !ETH !RW]: %DARK_GREEN%*    %NAME% -10%req %RED%%SOCKETS%os    %DARK_GREEN%*%MAP-76%
+
+// RARES >ilvl79
+// gloves, boots, circs
+ItemDisplay[RARE (EQ4 OR EQ5 OR EQ7) ILVL>79 !ETH !ID]: %NAME% [i%ILVL%]
+
+// hide all else
+ItemDisplay[ARMOR (MAG OR RARE OR UNI OR SET) !ID]:
+ItemDisplay[ARMOR NMAG !RW]:
